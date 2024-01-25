@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/libros"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvHome"
+        android:layout_width="253dp"
+        android:layout_height="121dp"
+        android:fontFamily="@font/anton"
+        android:gravity="bottom|center"
+        android:text="@string/home_title"
+        android:textAlignment="center"
+        android:textColor="#CC98805C"
+        android:textSize="95sp"
+        app:layout_constraintBottom_toTopOf="@+id/contenedorInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <LinearLayout
+        android:id="@+id/contenedorInfo"
+        android:layout_width="308dp"
+        android:layout_height="452dp"
+        android:background="@drawable/stylo_borde"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498">
+
+        <Space
+            android:layout_width="270dp"
+            android:layout_height="10dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintUno"
+            android:layout_width="222dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:alpha="1"
+            android:background="@drawable/stylo_border_dos"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/tvNombreInstituto"
+                android:layout_width="218dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="@string/nombreInstituto"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Space
+            android:layout_width="282dp"
+            android:layout_height="18dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintDos"
+            android:layout_width="278dp"
+            android:layout_height="176dp"
+            android:layout_gravity="center"
+            android:background="@drawable/stylo_border_dos">
+
+            <TableLayout
+                android:layout_width="283dp"
+                android:layout_height="69dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvcp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cp"
+                        android:textColor="@color/black" />
+
+                    <Space
+                        android:layout_width="38dp"
+                        android:layout_height="32dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mail"
+                        android:textColor="@color/black" />
+
+                    <Space
+                        android:layout_width="38dp"
+                        android:layout_height="32dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <ImageButton
+                android:id="@+id/imageButtonCorreo"
+                android:layout_width="39dp"
+                android:layout_height="37dp"
+                android:backgroundTint="#79493A21"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.679"
+                app:srcCompat="@drawable/correo" />
+
+            <ImageButton
+                android:id="@+id/imageButtonTelefono"
+                android:layout_width="39dp"
+                android:layout_height="37dp"
+                android:backgroundTint="#79493A21"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.648"
+                app:srcCompat="@drawable/telefono" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Space
+            android:layout_width="282dp"
+            android:layout_height="18dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stylo_border_dos">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:src="@drawable/baseline_thermostat_24"
+                android:tint="#E8423729"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.06"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.6" />
+
+            <TextView
+                android:id="@+id/tvTemperatura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperatura: 10º"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btnNavMenu"
+        android:layout_width="392dp"
+        android:layout_height="82dp"
+        android:background="@drawable/stylo_borde"
+        app:itemPaddingBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975"
+        app:menu="@menu/menuopciones_main" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

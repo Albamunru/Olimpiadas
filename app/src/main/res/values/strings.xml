@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Tarea_unidad3</string>
+    <string name="home_title"> Home</string>
+    <string name="culture_title"> Cultures</string>
+    <string name="education_title"> Cultures</string>
+    <string name="culturas_title"> Culturas</string>
+    <string name="educacion_title"> education</string>
+    <string name="nombreInstituto"> IES Arroyo Harnina</string>
+    <string name="direccion">Direccion: C/ Coria, Almendralejo</string>
+    <string name="provincia">Provincia: Badajoz</string>
+    <string name="telefono">Teléfono: 924 017 778</string>
+    <string name="cp">Web: https://iesarroyoharnina.educarex.es/</string>
+    <string name="mail">Correo: ies.arroyoharnina@edu.juntaex.es</string>
+    <string name="horario">HORARIO: </string>
+    <string name="lunesaviernes">De Lunes a Viernes: 9:00 a 16:00 </string>
+    <string name="sabadoydomingo">Sabado y Domingo: CERRADO</string>
+    <string name="numeroalumnos">Alumnado en centro: </string>
+    <string name="seleccion">¿A qué desea acceder?: </string>
+    <string name="agendaPersonal">Fecha: </string>
+    <string name="btnGuardar">Guardar </string>
+    <string name="btnRecuperar">Recuperar </string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemInformacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Información" />
+    <item
+        android:id="@+id/itemIdioma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Idioma" />
+</menu>

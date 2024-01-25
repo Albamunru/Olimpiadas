@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/idhome"
+        android:icon="@mipmap/hogar_18"
+        android:title="Home" />
+    <item
+        android:id="@+id/idculture"
+        android:icon="@mipmap/usuarios_24"
+        android:title="Culture" />
+    <item
+        android:id="@+id/ideducation"
+        android:icon="@mipmap/graduacion_24"
+        android:title="Education" />
+
+</menu>

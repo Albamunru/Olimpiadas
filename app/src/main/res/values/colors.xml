@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lima">#F4FF81</color>
+    <color name="marron">#8DAF744D</color>
+    <color name="limaClaro2">#CCEDF4A0</color>
+    <color name="limaOscuro">#3A4C2F</color>
+    <color name="blue">#534FDF</color>
+    <color name="blue2">#CC534FDF</color>
+    <color name="celeste">#D2D1EA</color>
+    <color name="celeste2">#77D2D1EA</color>
+    <color name="celeste3">#9FD2D1EA</color>
+    <color name="homeducation">#CC98805C</color>
+    <color name="otromarron">#493A21</color>
+    <color name="colorcolor">#CBD2D1EA</color>
+
+</resources>
