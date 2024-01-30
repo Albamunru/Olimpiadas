@@ -26,20 +26,27 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView nv;
 
     TextView pagWeb;
-     ImageButton llamar;
-     ImageButton email;
+     Button llamar;
+     Button email;
+     Button web;
 
 
-    @SuppressLint({"WrongViewCast", "CutPasteId"})
+    @SuppressLint({"WrongViewCast", "CutPasteId", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         llamar=findViewById(R.id.imageButtonTelefono);
-        email=findViewById(R.id.imageButtonCorreo);
+        email=findViewById(R.id.imageButtonCorreoe);
+        web= findViewById(R.id.imageButtonWeb);
 
-
+        web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWeb("https://iesarroyoharnina.educarex.es/");
+            }
+        });
         llamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        pagWeb = findViewById(R.id.tvcp);
+        /*pagWeb = findViewById(R.id.tvcp);
 
         pagWeb.setOnClickListener(e -> {
             openWeb("https://iesarroyoharnina.educarex.es/");
-        });
+        });*/
 
         nv = findViewById(R.id.btnNavMenu);
         nv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

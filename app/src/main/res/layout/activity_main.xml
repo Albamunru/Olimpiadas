@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/imageButtonCorreo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/libros"
@@ -77,76 +78,43 @@
             android:layout_gravity="center"
             android:background="@drawable/stylo_border_dos">
 
-            <TableLayout
-                android:layout_width="283dp"
-                android:layout_height="69dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/tvcp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cp"
-                        android:textColor="@color/black" />
-
-                    <Space
-                        android:layout_width="38dp"
-                        android:layout_height="32dp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/tvmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mail"
-                        android:textColor="@color/black" />
-
-                    <Space
-                        android:layout_width="38dp"
-                        android:layout_height="32dp" />
-
-                </TableRow>
-
-            </TableLayout>
-
-            <ImageButton
-                android:id="@+id/imageButtonCorreo"
-                android:layout_width="39dp"
-                android:layout_height="37dp"
-                android:backgroundTint="#79493A21"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.069"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.679"
-                app:srcCompat="@drawable/correo" />
-
-            <ImageButton
+            <Button
                 android:id="@+id/imageButtonTelefono"
-                android:layout_width="39dp"
-                android:layout_height="37dp"
-                android:backgroundTint="#79493A21"
+                android:layout_width="69dp"
+                android:layout_height="38dp"
+                android:backgroundTint="@color/otromarron"
+                android:textAlignment="center"
+                app:icon="@android:drawable/ic_menu_call"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/imageButtonCorreoe"
+                android:layout_width="69dp"
+                android:layout_height="38dp"
+                android:backgroundTint="@color/otromarron"
+                app:icon="@android:drawable/ic_dialog_email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.648"
-                app:srcCompat="@drawable/telefono" />
+                app:layout_constraintVertical_bias="0.5" />
+
+            <Button
+                android:id="@+id/imageButtonWeb"
+                android:layout_width="69dp"
+                android:layout_height="38dp"
+                android:backgroundTint="@color/otromarron"
+                app:icon="@drawable/baseline_screen_search_desktop_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.923"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -157,7 +125,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/stylo_border_dos">
+            android:background="@drawable/stylo_border_dos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:layout_editor_absoluteY="139dp">
 
             <ImageView
                 android:id="@+id/imageView"
