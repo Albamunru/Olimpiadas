@@ -16,40 +16,25 @@
         android:gravity="bottom|center"
         android:text="@string/educacion_title"
         android:textColor="@color/homeducation"
-        android:textSize="90sp"
+        android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarEducation"
-        android:layout_width="412dp"
-        android:layout_height="72dp"
-        android:background="#9F304331"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001"
-        app:navigationIcon="@drawable/baseline_arrow_back_24" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="347dp"
-        android:layout_height="329dp"
+        android:layout_width="351dp"
+        android:layout_height="490dp"
         android:background="@drawable/stylo_border_spinner"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584">
+        app:layout_constraintVertical_bias="0.78">
 
         <TextView
             android:id="@+id/tvSeleccione"

@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <queries>
         <package android:name="es.educarex.rayuela" />
@@ -27,16 +27,23 @@
         android:theme="@style/Theme.Tarea_unidad3"
         tools:targetApi="31">
         <activity
-            android:name=".AgendaPersonal"
+            android:name=".MainActivityVideo"
             android:exported="false" />
+        <activity
+            android:name=".AgendaPersonal"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivityEducation"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivityCulturas"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

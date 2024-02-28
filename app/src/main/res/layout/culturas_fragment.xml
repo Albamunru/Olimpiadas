@@ -11,49 +11,31 @@
         android:id="@+id/textView"
         android:layout_width="366dp"
         android:layout_height="125dp"
-        android:layout_marginBottom="28dp"
         android:fontFamily="@font/anton"
         android:gravity="bottom"
         android:text="@string/culture_title"
         android:textAlignment="center"
         android:textColor="#F5CDB363"
-        android:textSize="95sp"
+        android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageButton
-        android:id="@+id/btnVolverC"
-        android:layout_width="43dp"
-        android:layout_height="45dp"
-        android:background="@drawable/volver"
-        android:backgroundTint="@color/homeducation"
-        android:foregroundTint="@color/homeducation"
-        android:tint="#F5CDB363"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@mipmap/volver" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="392dp"
-        android:layout_height="428dp"
+        android:layout_width="399dp"
+        android:layout_height="530dp"
         android:background="@drawable/stylo_border_cultures"
         android:orientation="vertical"
         android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594">
+        app:layout_constraintVertical_bias="0.92">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"

@@ -40,7 +40,7 @@ public class AgendaPersonal extends AppCompatActivity {
         setContentView(R.layout.activity_agenda_personal);
 
 
-        tb = findViewById(R.id.toolbarAgenda);
+      /*  tb = findViewById(R.id.toolbarAgenda);
 
         tb.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class AgendaPersonal extends AppCompatActivity {
                 startActivity(pasardatosEducationA);
                 finish();
             }
-        });
+        });*/
 
         guardar = findViewById(R.id.btnguardar);
         recuperar = findViewById(R.id.btnrecuperar);

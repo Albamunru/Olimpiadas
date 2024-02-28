@@ -1,41 +1,41 @@
-package com.example.tarea_unidad3;
+package com.example.tarea_unidad3.fragments;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+
+import com.example.tarea_unidad3.MainActivity;
+import com.example.tarea_unidad3.MyRecyclerViewAdapter;
+import com.example.tarea_unidad3.Pais;
+import com.example.tarea_unidad3.R;
 
 import java.util.ArrayList;
 
-public class MainActivityCulturas extends AppCompatActivity{
+
+public class CulturasFragment extends Fragment {
+
 
     Pais pais;
     ImageButton btn;
     int seleccionado ;
     MyRecyclerViewAdapter adapter;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.culturas_fragment);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent pasardatosCuture = new Intent(v.getContext(), MainActivity.class);
-                startActivity(pasardatosCuture);
-                finish();
-            }
-        });
+    public CulturasFragment() {
+        // Required empty public constructor
+    }
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         String[] informaciones = obtenerInformaciones();
         String[] idiomas = obtenerIdiomas();
@@ -56,9 +56,9 @@ public class MainActivityCulturas extends AppCompatActivity{
         paises.add(new Pais("Bolivia",R.drawable.bolivia,1, informaciones[12], idiomas[12]));
         paises.add(new Pais("Brasil",R.drawable.brasil,1, informaciones[13], idiomas[13]));
 
-        RecyclerView rv = findViewById(R.id.recycler);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MyRecyclerViewAdapter(this, paises);
+        RecyclerView rv = view.findViewById(R.id.recycler);
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new MyRecyclerViewAdapter(getContext(), paises);
         adapter.setOnClickListener(new MyRecyclerViewAdapter.OnClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -69,46 +69,31 @@ public class MainActivityCulturas extends AppCompatActivity{
         });
         rv.setAdapter(adapter);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rv.setLayoutManager(layoutManager);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rv.getContext(),
                 layoutManager.getOrientation());
         rv.addItemDecoration(dividerItemDecoration);
+
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.culturas_fragment, container, false);
     }
 
     private void obtenerPais(int position) {
         this.pais = this.adapter.getItem(position);
     }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.itemInformacion){
-            new AlertDialog.Builder(this)
-                    .setTitle("Situación de " + this.pais.getNombrePais())
-                    .setMessage(this.pais.getInformaciones())
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-        } else if (item.getItemId() == R.id.itemIdioma) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Idioma oficial de " + this.pais.getNombrePais())
-                    .setMessage(this.pais.getIdioma())
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-        }
-
-        return super.onContextItemSelected(item);
-    }
-
 
     private String[] obtenerInformaciones() {
         String[] informaciones = {"Uruguay, aunque es uno de los países más pequeños de América del " +
@@ -117,9 +102,9 @@ public class MainActivityCulturas extends AppCompatActivity{
                 "de vida tranquilo.","La ubicación geográfica de Nicaragua, con su diversidad de paisajes" +
                 " y sus costas en dos océanos, ha influido en su ecología y en la vida de sus habitantes. " +
                 "Nicaragua es conocida por su belleza natural, sus sitios históricos y su cultura vibrante.",
-        "La ubicación geográfica de Argentina ha influido en su agricultura, economía y cultura. El " +
-                "país es conocido por su diversidad geográfica, desde las majestuosas montañas de los " +
-                "Andes hasta las extensas llanuras de la Pampa y las ciudades vibrantes como Buenos Aires."
+                "La ubicación geográfica de Argentina ha influido en su agricultura, economía y cultura. El " +
+                        "país es conocido por su diversidad geográfica, desde las majestuosas montañas de los " +
+                        "Andes hasta las extensas llanuras de la Pampa y las ciudades vibrantes como Buenos Aires."
                 ,"La ubicación geográfica de Ucrania ha influido en su historia, economía y cultura. " +
                 "El país ha experimentado momentos de cambio significativo a lo largo de los años, " +
                 "incluyendo su independencia en 1991 tras la disolución de la Unión Soviética."
@@ -133,18 +118,18 @@ public class MainActivityCulturas extends AppCompatActivity{
                         "cultural, su arquitectura única y sus paisajes variados.","La ubicación " +
                 "geográfica de Colombia ha influido en su diversidad natural, cultural y económica. " +
                 "El país es conocido por su biodiversidad, sus paisajes variados y su rica herencia cultural."
-        ,"La ubicación geográfica de Venezuela, con su costa caribeña, selvas tropicales y extensas " +
+                ,"La ubicación geográfica de Venezuela, con su costa caribeña, selvas tropicales y extensas " +
                 "llanuras, ha influido en su biodiversidad y en su historia económica, especialmente " +
                 "en relación con la industria del petróleo. Sin embargo, el país también ha enfrentado " +
                 "desafíos económicos y políticos en las últimas décadas.","La ubicación geográfica de " +
                 "Honduras, con su costa en el mar Caribe y su diversidad geográfica, ha influido en " +
                 "su ecología, cultura y economía. El país es conocido por su biodiversidad y su herencia cultural rica."
-        ,"La situación geográfica de Italia ha influido en su historia, desde el corazón del Imperio " +
+                ,"La situación geográfica de Italia ha influido en su historia, desde el corazón del Imperio " +
                 "Romano hasta la cuna del Renacimiento. Además de su importancia histórica y cultural, " +
                 "Italia es conocida por su paisaje diverso y su deliciosa cocina","La situación " +
                 "geográfica de China ha influido en su historia, cultura y desarrollo económico, y su " +
                 "diversidad geográfica la convierte en un país con una gran variedad de paisajes y ecosistemas."
-        ,"Bolivia, al igual que otros países de América del Sur, ofrece una geografía variada y una " +
+                ,"Bolivia, al igual que otros países de América del Sur, ofrece una geografía variada y una " +
                 "rica mezcla de culturas. La posición sin salida al mar de Bolivia ha influido en su " +
                 "historia y desarrollo económico.","Brasil es conocido por su diversidad geográfica, " +
                 "que va desde selvas tropicales hasta playas, montañas y llanuras. Su posición ecuatorial " +
@@ -198,11 +183,4 @@ public class MainActivityCulturas extends AppCompatActivity{
                 "en la educación formal, la administración gubernamental y los medios de comunicación."};
         return idiomas;
     }
-
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
-        menu.setHeaderTitle("Elija una opción: ");
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_contextual_paises, menu);
-    }
-
 }

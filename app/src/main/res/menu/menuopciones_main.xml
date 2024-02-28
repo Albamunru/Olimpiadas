@@ -6,12 +6,17 @@
         android:icon="@mipmap/hogar_18"
         android:title="Home" />
     <item
-        android:id="@+id/idculture"
-        android:icon="@mipmap/usuarios_24"
-        android:title="Culture" />
-    <item
         android:id="@+id/ideducation"
         android:icon="@mipmap/graduacion_24"
         android:title="Education" />
+
+    <item
+        android:id="@+id/idsalud"
+        android:icon="@drawable/baseline_local_hospital_24"
+        android:title="Salud" />
+    <item
+        android:id="@+id/idculture"
+        android:icon="@mipmap/usuarios_24"
+        android:title="Culture" />
 
 </menu>

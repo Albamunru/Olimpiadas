@@ -1,34 +1,33 @@
 package com.example.tarea_unidad3;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
 
 import android.annotation.SuppressLint;
-import android.app.SearchManager;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+
+import com.example.tarea_unidad3.fragments.CulturasFragment;
+import com.example.tarea_unidad3.fragments.EducationFragment;
+import com.example.tarea_unidad3.fragments.MainFragment;
+import com.example.tarea_unidad3.fragments.SaludFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    BottomNavigationView nv;
+    FragmentContainerView containerView;
 
-    TextView pagWeb;
-     Button llamar;
-     Button email;
-     Button web;
+    CulturasFragment culturasFragment = new CulturasFragment();
+    MainFragment mainFragment = new MainFragment();
+    EducationFragment educationFragment = new EducationFragment();
+    SaludFragment saludFragment = new SaludFragment();
+
+    BottomNavigationView navigationView;
+
 
 
     @SuppressLint({"WrongViewCast", "CutPasteId", "MissingInflatedId"})
@@ -37,56 +36,55 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        llamar=findViewById(R.id.imageButtonTelefono);
-        email=findViewById(R.id.imageButtonCorreoe);
-        web= findViewById(R.id.imageButtonWeb);
+        this.containerView = findViewById(R.id.fragmentContainer);
 
-        web.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openWeb("https://iesarroyoharnina.educarex.es/");
-            }
-        });
-        llamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                llamarAlCentro();
-            }
-        });
-
-        email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                enviarEmailConGmail();
-
-            }
-        });
+        setNavMenu();
 
 
-        /*pagWeb = findViewById(R.id.tvcp);
 
-        pagWeb.setOnClickListener(e -> {
-            openWeb("https://iesarroyoharnina.educarex.es/");
-        });*/
 
-        nv = findViewById(R.id.btnNavMenu);
-        nv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.idculture){
-                    Intent pasardatos1 = new Intent(getApplicationContext(), MainActivityCulturas.class);
-                    startActivity(pasardatos1);
-                }else if(item.getItemId() == R.id.ideducation){
-                    Intent pasardatos2 = new Intent(getApplicationContext(), MainActivityEducation.class);
-                    startActivity(pasardatos2);
-                }
-                return false;
-            }
-        });
 
 
 
     }
+
+    public void setNavMenu(){
+        this.navigationView = findViewById(R.id.btnNavMenu);
+
+        changeFragment(mainFragment);
+
+        this.navigationView.setOnItemSelectedListener(item -> {
+
+            switch (item.getItemId()){
+                case R.id.idhome:
+                    changeFragment(mainFragment);
+                    break;
+                case R.id.idculture:
+                    changeFragment(culturasFragment);
+                    break;
+                case R.id.ideducation:
+                    changeFragment(educationFragment);
+                    break;
+                case R.id.idsalud:
+                    changeFragment(saludFragment);
+                    break;
+                default:
+                    changeFragment(mainFragment);
+                    break;
+
+            }
+
+            return true;
+        });
+    }
+
+    public void changeFragment(Fragment fragment){
+    getSupportFragmentManager()
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
@@ -94,40 +92,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void openWeb(String url) {
 
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-
-        startActivity(intent);
-    }
-
-    private void llamarAlCentro() {
-        Intent intentoLlamada= new Intent(Intent.ACTION_VIEW,Uri.parse("tel:924017778"));
-        startActivity(intentoLlamada);
-    }
-
-
-    public void enviarEmailConGmail() {
-        String[] direccionesEmail = {"ies.arroyoharnina@edu.juntaex.es"};
-        String asunto = "Diploma ";
-        String cuerpoMensaje = "Buenos días me pongo en contacto con ustedes para recoger el título de 2º DAM";
-
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_EMAIL, direccionesEmail);
-        intent.putExtra(Intent.EXTRA_SUBJECT, asunto);
-        intent.putExtra(Intent.EXTRA_TEXT, cuerpoMensaje);
-
-
-        intent.setPackage("com.google.android.gm");
-
-        try {
-            startActivity(intent);
-        } catch (android.content.ActivityNotFoundException ex) {
-
-            Toast.makeText(this, "La aplicación Gmail no está instalada.", Toast.LENGTH_SHORT).show();
-        }
-    }
 
 
 

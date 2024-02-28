@@ -1,47 +1,73 @@
-package com.example.tarea_unidad3;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+package com.example.tarea_unidad3.fragments;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.tarea_unidad3.AgendaPersonal;
+import com.example.tarea_unidad3.R;
+
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivityEducation extends AppCompatActivity {
+
+public class EducationFragment extends Fragment {
+
 
     private Toolbar tb;
     Spinner spinner;
     List<String> opciones;
 
+    public EducationFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.education_fragment);
 
 
+        crearSpinner();
 
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.education_fragment, container, false);
+    }
+
     public void mostrar(){
         String seleccionado = spinner.getSelectedItem().toString();
 
-         if (seleccionado.equals("Classroom")){
+        if (seleccionado.equals("Classroom")){
             Uri uri = Uri.parse("https://classroom.google.com/");
             Intent intentoClass = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intentoClass);
         }else if (seleccionado.equals("Rayuela")){
             String rayuela= "es.educarex.rayuela";
             if(isAppInstalled(rayuela)){
-                Intent laucnhRayuela = getPackageManager().getLaunchIntentForPackage(rayuela);
+                Intent laucnhRayuela = getContext().getPackageManager().getLaunchIntentForPackage(rayuela);
                 if(laucnhRayuela != null)
                     startActivity(laucnhRayuela);
             }
@@ -50,14 +76,14 @@ public class MainActivityEducation extends AppCompatActivity {
             Intent intentoEncuesta = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intentoEncuesta);
         }else if (seleccionado.equals("Agenda personal")){
-            Intent pasardatosAgenda = new Intent(getApplicationContext(), AgendaPersonal.class);
+            Intent pasardatosAgenda = new Intent(getContext(), AgendaPersonal.class);
             startActivity(pasardatosAgenda);
-            finish();
         }
 
     }
+
     private boolean isAppInstalled(String rute) {
-        PackageManager pm = getPackageManager();
+        PackageManager pm = getContext().getPackageManager();
         try{
             pm.getPackageInfo(rute, PackageManager.GET_ACTIVITIES);
             return true;
@@ -68,11 +94,11 @@ public class MainActivityEducation extends AppCompatActivity {
     }
     public void crearSpinner(){
 
-        spinner = (Spinner) findViewById(R.id.spinnerEducation);
+        spinner = (Spinner) getView().findViewById(R.id.spinnerEducation);
 
         String [] op = {"Seleccione opcion: ", "Rayuela", "Classroom", "Encuesta profesorado","Agenda personal"};
         opciones = Arrays.asList(op);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item_cambio, opciones);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_item_cambio, opciones);
         spinner.setAdapter(adapter);
 
         // esta linea es la que hace que haya radiobutton en los items del spinner

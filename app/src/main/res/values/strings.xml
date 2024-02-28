@@ -4,7 +4,7 @@
     <string name="culture_title"> Cultures</string>
     <string name="education_title"> Cultures</string>
     <string name="culturas_title"> Culturas</string>
-    <string name="educacion_title"> education</string>
+    <string name="educacion_title"> Education</string>
     <string name="nombreInstituto"> IES Arroyo Harnina</string>
     <string name="direccion">Direccion: C/ Coria, Almendralejo</string>
     <string name="provincia">Provincia: Badajoz</string>
@@ -19,4 +19,6 @@
     <string name="agendaPersonal">Fecha: </string>
     <string name="btnGuardar">Guardar </string>
     <string name="btnRecuperar">Recuperar </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
