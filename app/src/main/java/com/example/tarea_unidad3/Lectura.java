@@ -1,6 +1,7 @@
 package com.example.tarea_unidad3;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,22 +17,30 @@ public class Lectura extends AsyncTask<Object,Object,String> {
 
     private String linea=null;
     private TaskCompleted listener;
+
+    public Lectura(TaskCompleted listener) {
+        this.listener = listener;
+    }
+
     @Override
     protected String doInBackground(Object... objects) {
         try{
-            URL url=new URL("https://iesarroyoharnina.es/sensoresharni/get.php");
+            URL url=new URL("https://iesarroyoharnina.es/sensoresharnina/get.php");
             HttpURLConnection clientehttp=(HttpURLConnection) url.openConnection();
+            clientehttp.setRequestMethod("GET");
+            clientehttp.setRequestProperty("Content-Type","application/json ");
             //LEEMOS EL STRING QUE NOS DEVUELVE EL SERVICIO WEB
             InputStream is=clientehttp.getInputStream();
             InputStreamReader isReades=new InputStreamReader(is, "UTF-8");
             BufferedReader reader=new BufferedReader(isReades);
             linea=reader.readLine();
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return linea;
     }
 
     @Override

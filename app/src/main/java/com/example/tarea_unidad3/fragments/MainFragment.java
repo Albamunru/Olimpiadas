@@ -12,6 +12,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Handler;
 import android.provider.Settings;
@@ -22,22 +23,34 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tarea_unidad3.Datos;
+import com.example.tarea_unidad3.Lectura;
 import com.example.tarea_unidad3.MainActivityVideo;
 import com.example.tarea_unidad3.R;
+import com.example.tarea_unidad3.TaskCompleted;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements TaskCompleted {
 
     BottomNavigationView nv;
     Button llamar;
     Button email;
     Button web;
     Button video;
-    private TextView textoTiempo;
+    private TextView textoTiempo, datosTemp, datosGases, datosHumedad, datosCalidadAire, datosFecha,
+            datosHora;
+    Lectura lectura;
+
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -51,8 +64,30 @@ public class MainFragment extends Fragment {
         video= view.findViewById(R.id.buttonVideo);
         textoTiempo=view.findViewById(R.id.textViewContadorTiempo);
 
+        datosTemp = view.findViewById(R.id.datoTemp);
+        datosGases = view.findViewById(R.id.datoGases);
+        datosHumedad = view.findViewById(R.id.datoHumedad);
+        datosCalidadAire = view.findViewById(R.id.datoCalidadA);
+        datosFecha = view.findViewById(R.id.tvDatoFecha);
+        datosHora = view.findViewById(R.id.tvDatoHora);
+
 
         contadorTiempoUso();
+
+        lectura=new Lectura(this);
+        lectura.execute();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -211,4 +246,36 @@ public class MainFragment extends Fragment {
             Toast.makeText(getView().getContext(), "La aplicación Gmail no está instalada.", Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public void onTaskCompleted(String s) {
+        List<Datos> datosList=new ArrayList<>();
+
+        JSONObject json = null;
+
+        try {
+            json = new JSONObject(s);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+
+            try {
+
+                Datos datos=new Datos(json.getString("temperatura"),json.getString("humedad"), json.getString("calidadaire"),json.getString("gasespeligrosos"), json.getString("fecha"), json.getString("hora"));
+                datosList.add(datos);
+                datosTemp.setText(datos.getTemperatura());
+                datosHumedad.setText(datos.getHumedad());
+                datosCalidadAire.setText(datos.getCalidadaire());
+                datosGases.setText(datos.getGasespeligrosos());
+                datosFecha.setText(datos.getFecha());
+                datosHora.setText(datos.getHora());
+
+
+
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
 }
