@@ -1,9 +1,8 @@
 package com.example.tarea_unidad3;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.tarea_unidad3.fragments.MainFragment;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +17,7 @@ public class Lectura extends AsyncTask<Object,Object,String> {
     private String linea=null;
     private TaskCompleted listener;
 
-    public Lectura(TaskCompleted listener) {
+    public Lectura(MainFragment listener) {
         this.listener = listener;
     }
 

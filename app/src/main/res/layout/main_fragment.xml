@@ -72,7 +72,7 @@
             android:background="@drawable/stylo_border_dos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_bias="0."
             tools:layout_editor_absoluteY="139dp">
 
             <ImageView
@@ -83,10 +83,10 @@
                 android:tint="#E8423729"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintHorizontal_bias="0.045"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.031" />
+                app:layout_constraintVertical_bias="0.20" />
 
             <TextView
                 android:id="@+id/tvTemperatura"
@@ -97,105 +97,110 @@
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.234"
+                app:layout_constraintHorizontal_bias="0.302"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.068" />
+                app:layout_constraintVertical_bias="0.20" />
 
             <TextView
                 android:id="@+id/tvHumedad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Humedad"
+                android:text="Humedad:"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.224"
+                app:layout_constraintHorizontal_bias="0.277"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.60" />
 
             <TextView
                 android:id="@+id/tvGasesPeligrosos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gases peligrosos"
+                android:text="Gases peligrosos:"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.278"
+                app:layout_constraintHorizontal_bias="0.341"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.271" />
+                app:layout_constraintVertical_bias="0.40" />
 
             <TextView
                 android:id="@+id/tvCalidadAire"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calidad del aire"
+                android:text="Calidad del aire:"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.27"
+                app:layout_constraintHorizontal_bias="0.337"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.676" />
+                app:layout_constraintVertical_bias="0.80" />
 
             <TextView
                 android:id="@+id/datoTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.794"
+                app:layout_constraintHorizontal_bias="0.878"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.101" />
+                app:layout_constraintVertical_bias="0.20" />
 
             <TextView
                 android:id="@+id/datoGases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.811"
+                app:layout_constraintHorizontal_bias="0.878"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.303" />
+                app:layout_constraintVertical_bias="0.40" />
 
             <TextView
                 android:id="@+id/datoCalidadA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.79"
+                app:layout_constraintHorizontal_bias="0.878"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.708" />
+                app:layout_constraintVertical_bias="0.80" />
 
             <TextView
                 android:id="@+id/datoHumedad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.79"
+                app:layout_constraintHorizontal_bias="0.885"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.51" />
+                app:layout_constraintVertical_bias="0.60" />
 
             <TextView
                 android:id="@+id/tvDatoFH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ultima actualizacion"
+                android:text="Última actualización:"
                 android:textColor="@color/black"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -207,22 +212,22 @@
 
             <TextView
                 android:id="@+id/tvDatoFecha"
-                android:layout_width="54dp"
-                android:layout_height="16dp"
-                android:text="TextView"
+                android:layout_width="67dp"
+                android:layout_height="20dp"
+                android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintHorizontal_bias="0.517"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.987" />
+                app:layout_constraintVertical_bias="0.995" />
 
             <TextView
                 android:id="@+id/tvDatoHora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -230,6 +235,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.995" />
+
+            <TextView
+                android:id="@+id/textViewInfo"
+                android:layout_width="378dp"
+                android:layout_height="21dp"
+                android:background="#ABF1E6E6"
+                android:text="Datos recogidos en el hall del centro"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.428"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.021" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -240,6 +261,19 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent">
 
+            <Button
+                android:id="@+id/buttonRecargar"
+                android:layout_width="79dp"
+                android:layout_height="37dp"
+                android:background="#00FFFFFF"
+                app:icon="@drawable/baseline_cloud_sync_24"
+                app:iconSize="40dp"
+                app:iconTint="#070707"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.439"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout

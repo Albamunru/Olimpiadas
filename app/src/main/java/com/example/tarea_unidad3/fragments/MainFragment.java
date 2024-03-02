@@ -45,7 +45,7 @@ public class MainFragment extends Fragment implements TaskCompleted {
     Button llamar;
     Button email;
     Button web;
-    Button video;
+    Button video,recarga;
     private TextView textoTiempo, datosTemp, datosGases, datosHumedad, datosCalidadAire, datosFecha,
             datosHora;
     Lectura lectura;
@@ -70,12 +70,20 @@ public class MainFragment extends Fragment implements TaskCompleted {
         datosCalidadAire = view.findViewById(R.id.datoCalidadA);
         datosFecha = view.findViewById(R.id.tvDatoFecha);
         datosHora = view.findViewById(R.id.tvDatoHora);
+        recarga=view.findViewById(R.id.buttonRecargar);
 
 
         contadorTiempoUso();
 
-        lectura=new Lectura(this);
-        lectura.execute();
+        Ejecutar();
+
+
+        recarga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Ejecutar();
+            }
+        });
 
 
 
@@ -127,6 +135,11 @@ public class MainFragment extends Fragment implements TaskCompleted {
             }
         });
 
+    }
+
+    private void Ejecutar() {
+        lectura=new Lectura(this);
+        lectura.execute();
     }
 
     private void contadorTiempoUso() {
@@ -227,14 +240,14 @@ public class MainFragment extends Fragment implements TaskCompleted {
 
     public void enviarEmailConGmail() {
         String[] direccionesEmail = {"ies.arroyoharnina@edu.juntaex.es"};
-        String asunto = "Diploma ";
-        String cuerpoMensaje = "Buenos días me pongo en contacto con ustedes para recoger el título de 2º DAM";
+       /* String asunto = "Diploma ";
+        String cuerpoMensaje = "Buenos días me pongo en contacto con ustedes para recoger el título de 2º DAM";*/
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, direccionesEmail);
-        intent.putExtra(Intent.EXTRA_SUBJECT, asunto);
-        intent.putExtra(Intent.EXTRA_TEXT, cuerpoMensaje);
+        // intent.putExtra(Intent.EXTRA_SUBJECT, asunto);
+        //intent.putExtra(Intent.EXTRA_TEXT, cuerpoMensaje);
 
 
         intent.setPackage("com.google.android.gm");
@@ -264,10 +277,10 @@ public class MainFragment extends Fragment implements TaskCompleted {
 
                 Datos datos=new Datos(json.getString("temperatura"),json.getString("humedad"), json.getString("calidadaire"),json.getString("gasespeligrosos"), json.getString("fecha"), json.getString("hora"));
                 datosList.add(datos);
-                datosTemp.setText(datos.getTemperatura());
-                datosHumedad.setText(datos.getHumedad());
-                datosCalidadAire.setText(datos.getCalidadaire());
-                datosGases.setText(datos.getGasespeligrosos());
+                datosTemp.setText(datos.getTemperatura()+" "+"ºC");
+                datosHumedad.setText(datos.getHumedad()+" "+"%");
+                datosCalidadAire.setText(datos.getCalidadaire()+" "+"µg/m³");
+                datosGases.setText(datos.getGasespeligrosos()+" "+"PPM");
                 datosFecha.setText(datos.getFecha());
                 datosHora.setText(datos.getHora());
 
