@@ -7,6 +7,7 @@ import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -277,10 +278,48 @@ public class MainFragment extends Fragment implements TaskCompleted {
 
                 Datos datos=new Datos(json.getString("temperatura"),json.getString("humedad"), json.getString("calidadaire"),json.getString("gasespeligrosos"), json.getString("fecha"), json.getString("hora"));
                 datosList.add(datos);
+
+                Float temp= Float.parseFloat(datos.getTemperatura());
+                Float gas=Float.parseFloat(datos.getGasespeligrosos());
+                Integer hum= Integer.parseInt(datos.getHumedad());
+                Float air=Float.parseFloat(datos.getCalidadaire());
                 datosTemp.setText(datos.getTemperatura()+" "+"ºC");
+                if(temp<25){
+
+                    datosTemp.setTextColor(Color.BLUE);
+                }else{
+                    datosTemp.setTextColor(Color.RED);
+                }
+                datosGases.setText(datos.getGasespeligrosos() + " " + "PPM");
+                if (gas<0.5f){
+
+
+                    datosGases.setTextColor(Color.GREEN);
+                }else{
+                    datosGases.setTextColor(Color.RED);
+                }
                 datosHumedad.setText(datos.getHumedad()+" "+"%");
+                if (hum<30 || hum>60){
+
+                    datosHumedad.setTextColor(Color.RED);
+
+                }else {
+                    datosHumedad.setTextColor(Color.GREEN);
+                }
+
+
+
                 datosCalidadAire.setText(datos.getCalidadaire()+" "+"µg/m³");
-                datosGases.setText(datos.getGasespeligrosos()+" "+"PPM");
+
+
+                if(air<25){
+
+
+                    datosCalidadAire.setTextColor(Color.GREEN);
+                }else {
+                    datosCalidadAire.setTextColor(Color.RED);
+                }
+
                 datosFecha.setText(datos.getFecha());
                 datosHora.setText(datos.getHora());
 

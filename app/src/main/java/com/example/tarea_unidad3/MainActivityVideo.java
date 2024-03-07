@@ -18,7 +18,7 @@ public class MainActivityVideo extends AppCompatActivity {
         setContentView(R.layout.activity_main_video);
 
         miVideo=findViewById(R.id.videoViewVideo);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.instituto;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.consejos;
         miVideo.setVideoURI(Uri.parse(videoPath));
         miVideo.start();
 
