@@ -2,12 +2,16 @@ package com.example.tarea_unidad3.fragments;
 
 import static android.content.Context.MODE_PRIVATE;
 
+
+
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -78,6 +82,11 @@ public class MainFragment extends Fragment implements TaskCompleted {
 
         Ejecutar();
 
+        if (!isInternetConnected()) {
+            Toast.makeText(getContext(), "No hay conexión a Internet", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
 
         recarga.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +146,17 @@ public class MainFragment extends Fragment implements TaskCompleted {
         });
 
     }
+
+
+    private boolean isInternetConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) requireContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null) {
+            NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+            return activeNetwork != null && activeNetwork.isConnected();
+        }
+        return false;
+    }
+
 
     private void Ejecutar() {
         lectura=new Lectura(this);

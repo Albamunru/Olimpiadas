@@ -19,6 +19,7 @@
     <string name="agendaPersonal">Fecha: </string>
     <string name="btnGuardar">Guardar </string>
     <string name="btnRecuperar">Recuperar </string>
+    <string name="fraseCultures">❝ Juntos, construyamos sociedades más saludables y resilientes. ¡Salud para todos, sin fronteras! ❞</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

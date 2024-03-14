@@ -50,7 +50,7 @@ public class MainActivityEducation extends AppCompatActivity {
             Intent intentoEncuesta = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intentoEncuesta);
         }else if (seleccionado.equals("Agenda personal")){
-            Intent pasardatosAgenda = new Intent(getApplicationContext(), AgendaPersonal.class);
+            Intent pasardatosAgenda = new Intent(getApplicationContext(), MainActivityCalendario.class);
             startActivity(pasardatosAgenda);
             finish();
         }

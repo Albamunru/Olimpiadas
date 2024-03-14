@@ -6,6 +6,7 @@
     <color name="marron">#8DAF744D</color>
     <color name="limaClaro2">#CCEDF4A0</color>
     <color name="limaOscuro">#3A4C2F</color>
+    <color name="limaOscuro2">#B2405E44</color>
     <color name="blue">#534FDF</color>
     <color name="blue2">#CC534FDF</color>
     <color name="celeste">#D2D1EA</color>
@@ -14,5 +15,6 @@
     <color name="homeducation">#CC98805C</color>
     <color name="otromarron">#493A21</color>
     <color name="colorcolor">#CBD2D1EA</color>
+    <color name="VerdeClaro">#FC9BC175</color>
 
 </resources>

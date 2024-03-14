@@ -53,6 +53,18 @@
             android:layout_height="72dp"
             android:layout_gravity="center"
             android:background="@drawable/stylo_border_dos" />
+
+        <Space
+            android:layout_width="351dp"
+            android:layout_height="275dp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonInfo"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stylo_border_spinner"
+            android:src="@drawable/info" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

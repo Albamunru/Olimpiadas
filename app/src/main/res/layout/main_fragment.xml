@@ -80,13 +80,12 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:src="@drawable/baseline_thermostat_24"
-                android:tint="#E8423729"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.045"
+                app:layout_constraintHorizontal_bias="0.009"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.20" />
+                app:layout_constraintVertical_bias="0.185" />
 
             <TextView
                 android:id="@+id/tvTemperatura"
@@ -238,9 +237,9 @@
 
             <TextView
                 android:id="@+id/textViewInfo"
-                android:layout_width="378dp"
-                android:layout_height="21dp"
-                android:background="#ABF1E6E6"
+                android:layout_width="316dp"
+                android:layout_height="22dp"
+                android:background="#77D2D1EA"
                 android:text="Datos recogidos en el hall del centro"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -251,6 +250,43 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.021" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvCalidadAire"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.809"
+                app:srcCompat="@drawable/calidadaire" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.018"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.405"
+                app:srcCompat="@drawable/gasespeligrosos" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.019"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.619"
+                app:srcCompat="@drawable/humedad" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -278,8 +314,8 @@
 
         <LinearLayout
             android:id="@+id/ConstraintDos"
-            android:layout_width="367dp"
-            android:layout_height="156dp"
+            android:layout_width="346dp"
+            android:layout_height="145dp"
             android:layout_gravity="center"
             android:background="@drawable/stylo_border_dos"
             android:gravity="center"
@@ -296,7 +332,7 @@
                     android:layout_width="69dp"
                     android:layout_height="38dp"
                     android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/otromarron"
+                    android:backgroundTint="@color/limaOscuro2"
                     app:icon="@android:drawable/ic_dialog_email"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -308,7 +344,7 @@
                     android:id="@+id/imageButtonTelefono"
                     android:layout_width="69dp"
                     android:layout_height="38dp"
-                    android:backgroundTint="@color/otromarron"
+                    android:backgroundTint="@color/limaOscuro2"
                     android:textAlignment="center"
                     app:icon="@android:drawable/ic_menu_call"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -330,7 +366,7 @@
                     android:layout_width="69dp"
                     android:layout_height="38dp"
                     android:layout_marginRight="10dp"
-                    android:backgroundTint="@color/otromarron"
+                    android:backgroundTint="@color/limaOscuro2"
                     app:icon="@drawable/baseline_screen_search_desktop_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -343,7 +379,7 @@
                     android:id="@+id/buttonVideo"
                     android:layout_width="67dp"
                     android:layout_height="39dp"
-                    android:backgroundTint="@color/otromarron"
+                    android:backgroundTint="@color/limaOscuro2"
                     app:icon="@drawable/baseline_smart_display_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -1,5 +1,7 @@
 package com.example.tarea_unidad3.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -9,15 +11,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import com.example.tarea_unidad3.AgendaPersonal;
+import com.example.tarea_unidad3.MainActivityCalendario;
 import com.example.tarea_unidad3.R;
 
 import java.util.Arrays;
@@ -30,6 +36,7 @@ public class EducationFragment extends Fragment {
     private Toolbar tb;
     Spinner spinner;
     List<String> opciones;
+    private ImageButton botonInfo;
 
     public EducationFragment() {
         // Required empty public constructor
@@ -41,6 +48,33 @@ public class EducationFragment extends Fragment {
 
 
         crearSpinner();
+
+        botonInfo= view.findViewById(R.id.imageButtonInfo);
+
+
+        botonInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder= new AlertDialog.Builder(getContext());
+                String mensaje= "Esta aplicación ha sido diseñada y creada por las alumnas de 2º Curso de DAM del IES Arroyo Harnina (Almendralejo):<br> <br>" +
+                        "Elena Zambrano Zambrano<br>" +
+                        "Inma Pérez Sánchez<br>" +
+                        "Alba Muñoz Rueda";
+
+            builder.setMessage(Html.fromHtml(mensaje)).setPositiveButton("Atrás",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            builder.create().show();
+
+
+            }
+        });
+
+
 
     }
 
@@ -76,7 +110,7 @@ public class EducationFragment extends Fragment {
             Intent intentoEncuesta = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intentoEncuesta);
         }else if (seleccionado.equals("Agenda personal")){
-            Intent pasardatosAgenda = new Intent(getContext(), AgendaPersonal.class);
+            Intent pasardatosAgenda = new Intent(getContext(), MainActivityCalendario.class);
             startActivity(pasardatosAgenda);
         }
 

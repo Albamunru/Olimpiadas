@@ -21,30 +21,33 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo_foreground"
-        android:label="@string/app_name"
+        android:label="TelecoGames"
         android:roundIcon="@drawable/logo_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tarea_unidad3"
         tools:targetApi="31">
+        <activity
+            android:name=".MainActivityCalendario"
+            android:exported="false" />
         <activity
             android:name=".MainActivityVideo"
             android:exported="false" />
         <activity
             android:name=".AgendaPersonal"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivityEducation"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivityCulturas"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
